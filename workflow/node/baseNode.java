@@ -9,6 +9,8 @@ import workflow.Flow;
 import java.util.ArrayList;
 
 public class baseNode {
+    protected static final String C_LEFT_BOUND="[";
+    protected static  final String C_RIGHT_BOUND="]";
     private static final Logger log = LoggerFactory.getLogger(baseNode.class);
 
     public baseNode(Flow flow)
@@ -178,15 +180,15 @@ public class baseNode {
         for(int i=0;i<m_iLevel;i++)
             sb.append("---");
 
-        sb.append("【");
+        sb.append(C_LEFT_BOUND);
         sb.append(m_Type);
-        sb.append("】");
-        sb.append(" 节点名称:【");
+        sb.append(C_RIGHT_BOUND);
+        sb.append(" 节点名称:"+C_LEFT_BOUND);
         sb.append(m_name);
-        sb.append("】");
-        sb.append(" 执行结果:【");
+        sb.append(C_RIGHT_BOUND);
+        sb.append(" 执行结果:"+C_LEFT_BOUND);
         sb.append(m_State);
-        sb.append("】");
+        sb.append(C_RIGHT_BOUND);
 
         String s=sb.toString();
         System.out.println(s);

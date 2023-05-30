@@ -10,6 +10,9 @@ import workflow.Flow;
 
 import java.util.ArrayList;
 
+import static workflow.node.baseNode.C_LEFT_BOUND;
+import static workflow.node.baseNode.C_RIGHT_BOUND;
+
 //组合节点
 public class Group extends baseNode {
     private static final Logger log = LoggerFactory.getLogger(Group.class);
@@ -275,18 +278,18 @@ public class Group extends baseNode {
         for(int i=0;i<m_iLevel;i++)
             sb.append("---");
 
-        sb.append("【");
+        sb.append(C_LEFT_BOUND);
         sb.append(m_Type);
-        sb.append("】");
-        sb.append(" 节点名称:【");
+        sb.append(C_RIGHT_BOUND);
+        sb.append(" 节点名称:"+C_LEFT_BOUND);
         sb.append(m_name);
-        sb.append("】");
-        sb.append(" 组内关系:【");
+        sb.append(C_RIGHT_BOUND);
+        sb.append(" 组内关系:"+C_LEFT_BOUND);
         sb.append(m_rel);
-        sb.append("】");
-        sb.append(" 执行结果:【");
+        sb.append(C_RIGHT_BOUND);
+        sb.append(" 执行结果:"+C_LEFT_BOUND);
         sb.append(m_State);
-        sb.append("】");
+        sb.append(C_RIGHT_BOUND);
 
         String s=sb.toString();
         System.out.println(s);

@@ -77,18 +77,18 @@ public class TestCaseWorkFlow {
         Rank zc_fzr=new Rank(flow,"T02","副主任职称");
 
 
-        //设定 人员张三，职称主任，职称副主任 为【发起人提交】的操作员
+        //设定 人员张三，职称主任，职称副主任 为[发起人提交]的操作员
         Assertions.assertEquals(1,flow.setOP(ry_zs,nodeFQRTJ),"当前流程中总计1操作员");
         Assertions.assertEquals(2,flow.setOP(zc_zr,nodeFQRTJ),"当前流程中总计2操作员");
         Assertions.assertEquals(3,flow.setOP(zc_fzr,nodeFQRTJ),"当前流程中总计3操作员");
 
-        //设定 职称主任，为【主任审批】的操作员
+        //设定 职称主任，为[主任审批]的操作员
         Assertions.assertEquals(3,flow.setOP(zc_zr,nodeZRSP),"当前流程中总计3操作员");
 
-        //设定 职称副主任，为【副主任审批】的操作员
+        //设定 职称副主任，为[副主任审批]的操作员
         Assertions.assertEquals(3,flow.setOP(zc_fzr,nodeFZRSP),"当前流程中总计3操作员");
 
-        //设定 职称主任，为【文件室手工签收】的操作员
+        //设定 职称主任，为[文件室手工签收]的操作员
         Assertions.assertEquals(3,flow.setOP(zc_zr,nodeWJSSGQS),"当前流程中总计3操作员");
 
 
@@ -119,12 +119,12 @@ public class TestCaseWorkFlow {
        Assertions.assertEquals(1,arNodes.size(),"当前等待处理的节点数应为1");
         for (String sn:arNodes) {
             System.out.println("");
-            System.out.print("流程中待处理节点编码:【"+sn+"】 ，有权限的操作员编码: ");
+            System.out.print("流程中待处理节点编码:["+sn+"] ，有权限的操作员编码: ");
 
             ArrayList<String> arOps= flow.findOPSByNode(sn);
             for(String sop:arOps)
             {
-                System.out.print("【"+sop+"】");
+                System.out.print("["+sop+"]");
             }
         }
 
@@ -140,12 +140,12 @@ public class TestCaseWorkFlow {
         Assertions.assertEquals(2,arNodes.size(),"当前等待处理的节点数应为2");
         for (String sn:arNodes) {
             System.out.println("");
-            System.out.print("流程中待处理节点编码:【"+sn+"】 ，有权限的操作员编码: ");
+            System.out.print("流程中待处理节点编码:["+sn+"] ，有权限的操作员编码: ");
 
             ArrayList<String> arOps= flow.findOPSByNode(sn);
             for(String sop:arOps)
             {
-                System.out.print("【"+sop+"】");
+                System.out.print("["+sop+"]");
             }
         }
 
@@ -160,12 +160,12 @@ public class TestCaseWorkFlow {
         Assertions.assertEquals(3,arNodes.size(),"当前等待处理的节点数应为3");
         for (String sn:arNodes) {
             System.out.println("");
-            System.out.print("流程中待处理节点编码:【"+sn+"】 ，有权限的操作员编码: ");
+            System.out.print("流程中待处理节点编码:["+sn+"] ，有权限的操作员编码: ");
 
             ArrayList<String> arOps= flow.findOPSByNode(sn);
             for(String sop:arOps)
             {
-                System.out.print("【"+sop+"】");
+                System.out.print("["+sop+"]");
             }
         }
 
@@ -178,12 +178,12 @@ public class TestCaseWorkFlow {
         Assertions.assertEquals(3,arNodes.size(),"当前等待处理的节点数应为3，因为操作员ADMIN未在流程中,无权处理");
         for (String sn:arNodes) {
             System.out.println("");
-            System.out.print("流程中待处理节点编码:【"+sn+"】 ，有权限的操作员编码: ");
+            System.out.print("流程中待处理节点编码:["+sn+"] ，有权限的操作员编码: ");
 
             ArrayList<String> arOps= flow.findOPSByNode(sn);
             for(String sop:arOps)
             {
-                System.out.print("【"+sop+"】");
+                System.out.print("["+sop+"]");
             }
         }
 
@@ -196,12 +196,12 @@ public class TestCaseWorkFlow {
         Assertions.assertEquals(0,arNodes.size(),"当前等待处理的节点数应为0，流程已结束");
         for (String sn:arNodes) {
             System.out.println("");
-            System.out.print("流程中待处理节点编码:【"+sn+"】 ，有权限的操作员编码: ");
+            System.out.print("流程中待处理节点编码:["+sn+"] ，有权限的操作员编码: ");
 
             ArrayList<String> arOps= flow.findOPSByNode(sn);
             for(String sop:arOps)
             {
-                System.out.print("【"+sop+"】");
+                System.out.print("["+sop+"]");
             }
         }
         System.out.println(" ");
